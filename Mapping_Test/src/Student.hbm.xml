@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--
+
+  This mapping demonstrates 
+
+-->
+
+<hibernate-mapping >
+	<class name="Student" table="student">
+		<id name="studentId" column="student_id">
+			<generator class="increment"/>
+		</id>
+		<property name="studentName" column="student_name" type="java.lang.String"/>
+		<one-to-one name = "address" class="Address" cascade="all" />
+		
+	</class>
+
+</hibernate-mapping>
